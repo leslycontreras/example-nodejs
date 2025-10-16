@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/leslycontreras/example-nodejs'
+                git branch: 'main', url: 'https://github.com/leslycontreras/example-nodejs'
             }
         }
 
