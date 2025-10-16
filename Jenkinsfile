@@ -6,15 +6,21 @@ pipeline {
     }
 
     stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/leslycontreras/example-nodejs'
+            }
+        }
+
         stage('Install dependencies') {
             steps {
                 sh 'npm install'
             }
         }
 
-        stage('Run Hello World') {
+        stage('Test') {
             steps {
-                sh 'node index.js'
+                sh 'npm test'
             }
         }
     }
